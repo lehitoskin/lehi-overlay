@@ -12,7 +12,7 @@ SRC_URI="https://github.com/lehitoskin/ivy/archive/v${PV}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-scheme/racket-6.0.1[X]"
