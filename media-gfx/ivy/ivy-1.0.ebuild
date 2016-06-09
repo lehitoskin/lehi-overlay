@@ -32,4 +32,9 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}/usr" install
+
+	for f in /usr/share/applications/ivy-image-viewer.desktop; do
+		sed -e "s|${D}||g" \
+			-i "${D}/${f}" || die "Failed to patch '${f}'"
+	done
 }
