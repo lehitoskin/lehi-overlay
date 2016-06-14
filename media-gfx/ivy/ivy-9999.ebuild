@@ -12,7 +12,6 @@ EGIT_REPO_URI="git://github.com/lehitoskin/ivy
 				https://github.com/lehitoskin/ivy"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-scheme/racket-6.0.1[X]"
