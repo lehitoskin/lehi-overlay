@@ -29,5 +29,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}/usr" install
+	#emake DESTDIR="${D}/usr" install
+	# defaults to /usr
+	emake install
 }
