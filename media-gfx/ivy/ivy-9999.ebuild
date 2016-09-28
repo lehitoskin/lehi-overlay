@@ -14,15 +14,16 @@ LICENSE="GPL-3"
 SLOT="0"
 IUSE=""
 
-DEPEND=">=dev-scheme/racket-6.0.1[X]"
+DEPEND=">=dev-scheme/racket-6.6[X]"
 RDEPEND="${DEPEND}
-		>=dev-db/sqlite-3.11.1"
+		dev-db/sqlite:3
+		gnome-base/librsvg"
 
 src_prepare() {
 	# recommended by Gentoo
 	epatch_user
 	# install racquel
-	raco pkg install --no-setup racquel
+	raco pkg install --no-setup racquel rsvg
 }
 
 src_compile() {
