@@ -28,7 +28,10 @@ src_compile() {
 src_install() {
 	#emake DESTDIR="${D}/usr" install
 	mkdir -p ${D}/usr/share/racket/pkgs/rsvg
-	cp -Rv . ${D}/usr/share/racket/pkgs/rsvg
+	install -m 0644 COPYING ${D}/usr/share/racket/pkgs/rsvg
+	install -m 0644 README.md ${D}/usr/share/racket/pkgs/rsvg
+	install -m 0644 info.rkt ${D}/usr/share/racket/pkgs/rsvg
+	cp -Rv rsvg/* ${D}/usr/share/racket/pkgs/rsvg
 }
 
 pkg_postinst() {
