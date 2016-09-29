@@ -17,13 +17,12 @@ IUSE=""
 
 DEPEND=">=dev-scheme/racket-6.0.1[X]"
 RDEPEND="${DEPEND}
-		>=dev-db/sqlite-3.11.1"
+		dev-db/sqlite:3
+		dev-scheme/racquel"
 
 src_prepare() {
 	# recommended by Gentoo
 	epatch_user
-	# install racquel
-	raco pkg install --no-setup racquel
 }
 
 src_compile() {
@@ -33,6 +32,7 @@ src_compile() {
 src_install() {
 	emake DESTDIR="${D}/usr" install
 
+	# fix pathing in .desktop file
 	for f in /usr/share/applications/ivy-image-viewer.desktop; do
 		sed -e "s|${D}||g" \
 			-i "${D}/${f}" || die "Failed to patch '${f}'"
