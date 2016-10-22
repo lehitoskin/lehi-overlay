@@ -7,9 +7,9 @@ EAPI=5
 inherit eutils git-2
 
 DESCRIPTION="Racket code for manipulating GIF images"
-HOMEPAGE="https://github.com/cbowdon/gif-image"
-EGIT_REPO_URI="git://github.com/cbowdon/gif-image
-	https://github.com/cbowdon/gif-image"
+HOMEPAGE="https://github.com/lehitoskin/gif-image"
+EGIT_REPO_URI="git://github.com/lehitoskin/gif-image
+	https://github.com/lehitoskin/gif-image"
 LICENSE="GPL-3"
 SLOT="0"
 
