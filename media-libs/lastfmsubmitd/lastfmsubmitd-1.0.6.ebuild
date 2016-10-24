@@ -6,7 +6,7 @@
 EAPI=6
 PYTHON_COMPAT=( python2_7 )
 
-inherit user distutils-r1
+inherit eutils user distutils-r1
 
 DESCRIPTION="Lastfmsubmitd is a Last.fm client plugin framework"
 HOMEPAGE="http://www.red-bean.com/decklin/lastfmsubmitd/"
@@ -24,6 +24,7 @@ DIRS="/var/log/lastfm /var/run/lastfm /var/spool/lastfm"
 
 src_prepare() {
 	distutils-r1_src_prepare
+	install -m 0755 ${FILESDIR}/lastfmsubmitd "${D}/etc/init.d"
 }
 
 pkg_postinst() {
@@ -32,3 +33,7 @@ pkg_postinst() {
 	mkdir -p $DIRS
 	chown lastfm:lastfm $DIRS
 }
+
+#pkg_postrm() {
+#	rm /etc/init.d/lastfmsubmitd
+#}

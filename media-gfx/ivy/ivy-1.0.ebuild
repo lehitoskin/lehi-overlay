@@ -8,7 +8,7 @@ inherit eutils
 
 DESCRIPTION="Ivy is a taggable image viewer"
 HOMEPAGE="https://github.com/lehitoskin/ivy"
-SRC_URI="https://github.com/lehitoskin/ivy/archive/v${PV}.tar.gz"
+SRC_URI="https://github.com/lehitoskin/ivy/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
