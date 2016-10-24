@@ -24,6 +24,7 @@ DIRS="/var/log/lastfm /var/run/lastfm /var/spool/lastfm"
 
 src_prepare() {
 	distutils-r1_src_prepare
+	mkdir "${D}/etc/init.d"
 	install -m 0755 ${FILESDIR}/lastfmsubmitd "${D}/etc/init.d"
 }
 
@@ -33,7 +34,3 @@ pkg_postinst() {
 	mkdir -p $DIRS
 	chown lastfm:lastfm $DIRS
 }
-
-#pkg_postrm() {
-#	rm /etc/init.d/lastfmsubmitd
-#}
