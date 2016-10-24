@@ -6,7 +6,7 @@
 EAPI=6
 PYTHON_COMPAT=( python2_7 )
 
-inherit eutils distutils-r1
+inherit user distutils-r1
 
 DESCRIPTION="Lastfmsubmitd is a Last.fm client plugin framework"
 HOMEPAGE="http://www.red-bean.com/decklin/lastfmsubmitd/"
