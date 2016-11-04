@@ -28,7 +28,7 @@ RDEPEND="gnome-base/libglade
 		gnome-base/gconf
 		ftp? ( net-fs/curlftpfs )
 		fuse? ( sys-fs/fuse gnome-base/gvfs[fuse?] )
-		ssh? ( sys-fs/sshfs-fuse )"
+		ssh? ( net-fs/sshfs )"
 
 DEPEND="${RDEPEND}
         dev-libs/libconfig
