@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~x86 ~amd64"
 IUSE="ftp fuse ssh"
 
 RDEPEND="gnome-base/libglade
