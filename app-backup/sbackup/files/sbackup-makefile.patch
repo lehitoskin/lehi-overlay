@@ -1,0 +1,41 @@
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2013-09-17 11:49:58.000000000 -0700
++++ b/Makefile	2016-11-04 01:47:15.964529880 -0700
+@@ -43,7 +43,7 @@
+ # definition of paths and filenames
+ # installation into /usr/local to be compliant to GNU standards
+ PREFIX=/usr/local
+-DESTDIR=/usr/local
++DESTDIR=$(PREFIX)
+ 
+ datadir=$(DESTDIR)/share
+ bindir=$(DESTDIR)/bin
+@@ -162,16 +162,16 @@
+ 	install -m 644 data/$(dbus_system_conf_file) $(dbus_system_conf_dir)
+ 	@if test "$(DISABLE_MAKEFILE_DBUS_RELOAD)" = ""; then \
+ 	if [ -x $(servicetool) ]; then \
+-	$(servicetool) dbus force-reload; \
++	$(servicetool) dbus reload; \
+ 	else if [ -r /etc/init.d/dbus ]; then \
+-	invoke-rc.d dbus force-reload; fi; fi; \
++	invoke-rc.d dbus reload; fi; fi; \
+ 	fi
+ 
+ install-gconf:
+ 	install -d $(gconf_schema_file_dir)
+ 	install -m 644 data/$(gconf_schema_file) $(gconf_schema_file_dir)
+ 	@if test "$(GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL)" = ""; then \
+-	gconf-schemas --register $(gconf_schema_file_dir)/$(gconf_schema_file); \
++	gconftool-2 --install-schema-file $(gconf_schema_file_dir)/$(gconf_schema_file); \
+ 	fi
+ 
+ 
+@@ -188,7 +188,7 @@
+ uninstall-package:
+ 	rm -rf $(libdir)
+ 
+-uninstall-data: uninstall-icons uninstall-dbus uninstall-gconf
++uninstall-data: uninstall-icons uninstall-dbus #uninstall-gconf
+ 	rm -f $(datadir)/pixmaps/sbackup-restore.png
+ 	rm -f $(datadir)/pixmaps/sbackup-conf.png
+ 	rm -f $(datadir)/pixmaps/sbackup.png

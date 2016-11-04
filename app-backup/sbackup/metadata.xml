@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>lehi@tosk.in</email>
+		<name>lehi</name>
+	</maintainer>
+	<use>
+		<flag name="FTP">Adds support for the FTP plugin. Default is off.</flag>
+		<flag name="FUSE">Adds support for the FUSE plugin. Default is off.</flag>
+		<flag name="SSH">Adds support for the SSH plugin. Default is off.</flag>
+	</use>
+</pkgmetadata>
