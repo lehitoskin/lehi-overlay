@@ -36,9 +36,11 @@ DEPEND="${RDEPEND}
         sys-devel/libtool"
 
 src_prepare() {
+	# portage complains otherwise
+	eapply_user
 	# convert old schema type to new
-	mv -v apps_sbackup_global-preferences.schemas apps_sbackup_global-preferences.schemas.old
-	gsettings-schema-convert -g apps_sbackup_global-preferences.schemas.old -o apps_sbackup_global-preferences.schemas
+	mv -v data/apps_sbackup_global-preferences.schemas data/apps_sbackup_global-preferences.schemas.old
+	gsettings-schema-convert -g data/apps_sbackup_global-preferences.schemas.old -o data/apps_sbackup_global-preferences.schemas
 
 	# patch the Makefile
 	epatch ${FILESDIR}/sbackup-makefile.patch
@@ -49,5 +51,5 @@ src_compile() {
 }
 
 src_install() {
-	emake PREFIX="${D}" install
+	emake ROOTDIR="${D}" PREFIX="${D}/usr" install
 }

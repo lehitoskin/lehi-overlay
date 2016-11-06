@@ -1,16 +1,26 @@
 diff -Naur a/Makefile b/Makefile
 --- a/Makefile	2013-09-17 11:49:58.000000000 -0700
-+++ b/Makefile	2016-11-04 01:47:15.964529880 -0700
-@@ -43,7 +43,7 @@
++++ b/Makefile	2016-11-04 02:50:24.641916683 -0700
+@@ -43,7 +43,8 @@
  # definition of paths and filenames
  # installation into /usr/local to be compliant to GNU standards
  PREFIX=/usr/local
 -DESTDIR=/usr/local
 +DESTDIR=$(PREFIX)
++ROOTDIR=/
  
  datadir=$(DESTDIR)/share
  bindir=$(DESTDIR)/bin
-@@ -162,16 +162,16 @@
+@@ -55,7 +56,7 @@
+ icondir=$(datadir)/icons
+ gconf_schema_file_dir=$(datadir)/gconf/schemas
+ 
+-sysconf_dir=/etc
++sysconf_dir=$(ROOTDIR)/etc
+ dbus_system_conf_dir=$(sysconf_dir)/dbus-1/system.d
+ 
+ gconf_schema_file=apps_sbackup_global-preferences.schemas
+@@ -162,16 +163,16 @@
  	install -m 644 data/$(dbus_system_conf_file) $(dbus_system_conf_dir)
  	@if test "$(DISABLE_MAKEFILE_DBUS_RELOAD)" = ""; then \
  	if [ -x $(servicetool) ]; then \
@@ -30,7 +40,7 @@ diff -Naur a/Makefile b/Makefile
  	fi
  
  
-@@ -188,7 +188,7 @@
+@@ -188,7 +189,7 @@
  uninstall-package:
  	rm -rf $(libdir)
  
