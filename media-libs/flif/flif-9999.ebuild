@@ -10,9 +10,9 @@ DESCRIPTION="FLIF is the Free Lossless Image Format"
 HOMEPAGE="http://flif.info"
 EGIT_REPO_URI="git://github.com/FLIF-hub/FLIF.git
 				https://github.com/FLIF-hub/FLIF"
-LICENSE="LGPL-3"
+LICENSE="LGPL-3 Apache-2"
 SLOT="0"
-IUSE="-viewflif"
+IUSE="-viewflif +decoder"
 
 DEPEND="media-libs/libpng
 		viewflif? ( media-libs/libsdl2 )
@@ -26,8 +26,11 @@ src_prepare() {
 
 src_compile() {
 	emake
+	cd src/
+	if use decoder; then
+		emake decoder
+	fi
 	if use viewflif; then
-		cd src/
 		emake viewflif
 	fi
 }
@@ -35,9 +38,13 @@ src_compile() {
 src_install() {
 	#emake DESTDIR="${D}/usr" install
 	# defaults to /usr
+	cd src/
 	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install-dev
+	if use decoder; then
+		emake DESTDIR="${D}" install-decoder
+	fi
 	if use viewflif; then
-		cd src/
 		emake DESTDIR="${D}" install-viewflif
 	fi
 }
