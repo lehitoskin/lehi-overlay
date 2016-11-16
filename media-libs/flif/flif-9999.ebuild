@@ -12,10 +12,10 @@ EGIT_REPO_URI="git://github.com/FLIF-hub/FLIF.git
 				https://github.com/FLIF-hub/FLIF"
 LICENSE="LGPL-3"
 SLOT="0"
-IUSE=""
+IUSE="-viewflif"
 
 DEPEND="media-libs/libpng
-		media-libs/libsdl2
+		viewflif? ( media-libs/libsdl2 )
 		sys-libs/zlib"
 RDEPEND="${DEPEND}"
 
@@ -26,10 +26,18 @@ src_prepare() {
 
 src_compile() {
 	emake
+	if use viewflif; then
+		cd src/
+		emake viewflif
+	fi
 }
 
 src_install() {
 	#emake DESTDIR="${D}/usr" install
 	# defaults to /usr
 	emake DESTDIR="${D}" install
+	if use viewflif; then
+		cd src/
+		emake DESTDIR="${D}" install-viewflif
+	fi
 }
