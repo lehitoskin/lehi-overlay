@@ -18,6 +18,7 @@ DEPEND=">=dev-scheme/racket-6.6[X]"
 RDEPEND="${DEPEND}
 		dev-db/sqlite:3
 		dev-scheme/gif-image
+		dev-scheme/png-image
 		dev-scheme/racquel
 		dev-scheme/rsvg"
 
