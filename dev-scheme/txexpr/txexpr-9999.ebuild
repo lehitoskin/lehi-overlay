@@ -31,7 +31,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	raco link -i /usr/share/racket/pkgs/txexpr
+	raco link -id /usr/share/racket/pkgs/txexpr
 }
 
 pkg_prerm() {

@@ -30,7 +30,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	raco link -i /usr/share/racket/pkgs/sugar
+	raco link -id /usr/share/racket/pkgs/sugar
 }
 
 pkg_prerm() {
