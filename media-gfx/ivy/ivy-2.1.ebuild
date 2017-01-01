@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit eutils
 
@@ -15,10 +15,14 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=dev-scheme/racket-6.0.1[X]"
+DEPEND=">=dev-scheme/racket-6.6[X]"
 RDEPEND="${DEPEND}
 		dev-db/sqlite:3
-		dev-scheme/racquel"
+		dev-scheme/gif-image
+		dev-scheme/png-image
+		dev-scheme/racquel
+		dev-scheme/rsvg
+		dev-scheme/txexpr"
 
 src_prepare() {
 	# recommended by Gentoo
