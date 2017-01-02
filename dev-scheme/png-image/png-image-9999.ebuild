@@ -6,7 +6,7 @@ EAPI=5
 
 inherit eutils git-2
 
-DESCRIPTION="Racket code for manipulating GIF images"
+DESCRIPTION="Library to view and modify PNG chunks."
 HOMEPAGE="https://github.com/lehitoskin/png-image"
 EGIT_REPO_URI="git://github.com/lehitoskin/png-image
 	https://github.com/lehitoskin/png-image"
