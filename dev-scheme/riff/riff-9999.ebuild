@@ -7,9 +7,9 @@ EAPI=5
 inherit eutils git-2
 
 DESCRIPTION="Racket wrapper to the FLIF library."
-HOMEPAGE="https://github.com/lehitoskin/flif"
-EGIT_REPO_URI="git://github.com/lehitoskin/flif
-	https://github.com/lehitoskin/flif"
+HOMEPAGE="https://github.com/lehitoskin/riff"
+EGIT_REPO_URI="git://github.com/lehitoskin/riff
+	https://github.com/lehitoskin/riff"
 LICENSE="GPL-3"
 SLOT="0"
 
@@ -24,14 +24,15 @@ src_compile() {
 }
 
 src_install() {
-	mkdir -p ${D}/usr/share/racket/pkgs/flif
-	cp -Rv . ${D}/usr/share/racket/pkgs/flif
+	mkdir -p ${D}/usr/share/racket/pkgs/riff
+	cp -Rv . ${D}/usr/share/racket/pkgs/riff
 }
 
 pkg_postinst() {
-	raco link -i /usr/share/racket/pkgs/flif
+	raco link -i /usr/share/racket/pkgs/riff
+	raco setup --only riff
 }
 
 pkg_prerm() {
-	raco link -ir /usr/share/racket/pkgs/flif
+	raco link -ir /usr/share/racket/pkgs/riff
 }

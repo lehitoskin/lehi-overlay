@@ -28,6 +28,7 @@ src_install() {
 
 pkg_postinst() {
 	raco link -id /usr/share/racket/pkgs/txexpr
+	raco setup --only txexpr
 }
 
 pkg_prerm() {

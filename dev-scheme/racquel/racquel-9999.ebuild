@@ -32,6 +32,7 @@ src_install() {
 
 pkg_postinst() {
 	raco link -i /usr/share/racket/pkgs/racquel
+	raco setup --only racquel
 }
 
 pkg_prerm() {
