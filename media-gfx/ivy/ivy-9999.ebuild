@@ -20,8 +20,10 @@ RDEPEND="${DEPEND}
 		dev-scheme/gif-image
 		dev-scheme/png-image
 		dev-scheme/racquel
+		dev-scheme/riff
 		dev-scheme/rsvg
-		dev-scheme/txexpr"
+		dev-scheme/txexpr
+		media-libs/flif"
 
 src_prepare() {
 	# recommended by Gentoo
