@@ -21,10 +21,6 @@ src_prepare() {
 	epatch_user
 }
 
-src_compile() {
-	raco make -v txexpr/main.rkt
-}
-
 src_install() {
 	mkdir -p ${D}/usr/share/racket/pkgs/txexpr
 	cp -Rv . ${D}/usr/share/racket/pkgs/txexpr
@@ -33,6 +29,7 @@ src_install() {
 pkg_postinst() {
 	raco link -id /usr/share/racket/pkgs/txexpr
 	raco setup --only txexpr
+	raco make -v /usr/share/racket/pkgs/txexpr/txexpr/main.rkt
 }
 
 pkg_prerm() {
