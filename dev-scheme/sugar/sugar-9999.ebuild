@@ -20,6 +20,10 @@ src_prepare() {
 	epatch_user
 }
 
+src_compile() {
+	raco make -v sugar/main.rkt
+}
+
 src_install() {
 	mkdir -p ${D}/usr/share/racket/pkgs/sugar
 	cp -Rv . ${D}/usr/share/racket/pkgs/sugar

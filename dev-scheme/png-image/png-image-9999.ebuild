@@ -20,12 +20,10 @@ src_prepare() {
 }
 
 src_compile() {
-	#emake
 	raco make -v main.rkt
 }
 
 src_install() {
-	#emake DESTDIR="${D}/usr" install
 	mkdir -p ${D}/usr/share/racket/pkgs/png-image
 	cp -Rv . ${D}/usr/share/racket/pkgs/png-image
 }
