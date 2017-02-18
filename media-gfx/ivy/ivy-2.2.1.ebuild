@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI=5
+EAPI=6
 
 inherit eutils
 
@@ -19,8 +19,12 @@ DEPEND=">=dev-scheme/racket-6.6[X]"
 RDEPEND="${DEPEND}
 		dev-db/sqlite:3
 		dev-scheme/gif-image
+		dev-scheme/png-image
 		dev-scheme/racquel
-		dev-scheme/rsvg"
+		dev-scheme/riff
+		dev-scheme/rsvg
+		dev-scheme/txexpr
+		media-libs/flif[decoder]"
 
 src_prepare() {
 	# recommended by Gentoo

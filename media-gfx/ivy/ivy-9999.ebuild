@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}
 		dev-scheme/riff
 		dev-scheme/rsvg
 		dev-scheme/txexpr
-		media-libs/flif"
+		media-libs/flif[decoder]"
 
 src_prepare() {
 	# recommended by Gentoo
