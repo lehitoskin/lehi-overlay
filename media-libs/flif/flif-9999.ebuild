@@ -37,14 +37,13 @@ src_compile() {
 
 src_install() {
 	#emake DESTDIR="${D}/usr" install
-	# defaults to /usr
 	cd src/
-	emake DESTDIR="${D}" install
-	emake DESTDIR="${D}" install-dev
+	emake PREFIX="${D}/usr" install
+	emake PREFIX="${D}/usr" install-dev
 	if use decoder; then
-		emake DESTDIR="${D}" install-decoder
+		emake PREFIX="${D}/usr" install-decoder
 	fi
 	if use viewflif; then
-		emake DESTDIR="${D}" install-viewflif
+		emake PREFIX="${D}/usr" install-viewflif
 	fi
 }
