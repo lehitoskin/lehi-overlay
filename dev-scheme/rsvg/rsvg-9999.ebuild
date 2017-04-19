@@ -31,7 +31,7 @@ src_install() {
 
 pkg_postinst() {
 	raco link -id /usr/share/racket/pkgs/rsvg
-	raco setup --only rsvg
+	raco setup --all-users --only rsvg
 }
 
 pkg_prerm() {

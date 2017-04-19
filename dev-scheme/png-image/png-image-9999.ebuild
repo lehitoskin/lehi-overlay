@@ -30,7 +30,7 @@ src_install() {
 
 pkg_postinst() {
 	raco link -i /usr/share/racket/pkgs/png-image
-	raco setup --only png-image
+	raco setup --all-users --only png-image
 }
 
 pkg_prerm() {

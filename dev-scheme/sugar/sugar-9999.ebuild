@@ -31,7 +31,7 @@ src_install() {
 
 pkg_postinst() {
 	raco link -id /usr/share/racket/pkgs/sugar
-	raco setup --only sugar
+	raco setup --all-users --only sugar
 }
 
 pkg_prerm() {

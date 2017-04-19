@@ -30,7 +30,7 @@ src_install() {
 
 pkg_postinst() {
 	raco link -i /usr/share/racket/pkgs/gif-image
-	raco setup --only gif-image
+	raco setup --all-users --only gif-image
 }
 
 pkg_prerm() {

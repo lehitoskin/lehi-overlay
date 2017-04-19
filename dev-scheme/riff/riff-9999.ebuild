@@ -30,7 +30,7 @@ src_install() {
 
 pkg_postinst() {
 	raco link -i /usr/share/racket/pkgs/riff
-	raco setup --only riff
+	raco setup --all-users --only riff
 }
 
 pkg_prerm() {
