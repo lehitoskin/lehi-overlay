@@ -1,17 +1,18 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Id$
 
-EAPI=5
+EAPI=6
 
-inherit eutils git-2
+inherit eutils
 
 DESCRIPTION="Ivy is a taggable image viewer"
 HOMEPAGE="https://github.com/lehitoskin/ivy"
-EGIT_REPO_URI="git://github.com/lehitoskin/ivy
-				https://github.com/lehitoskin/ivy"
+SRC_URI="https://github.com/lehitoskin/ivy/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+
 LICENSE="GPL-3"
 SLOT="0"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=">=dev-scheme/racket-6.6[X]"
@@ -20,10 +21,10 @@ RDEPEND="${DEPEND}
 		dev-scheme/gif-image
 		dev-scheme/png-image
 		dev-scheme/racquel
-		>=dev-scheme/riff-0.2
+		=dev-scheme/riff-0.2
 		dev-scheme/rsvg
 		dev-scheme/txexpr
-		>=media-libs/flif-0.3[decoder]"
+		=media-libs/flif-0.3[decoder]"
 
 src_prepare() {
 	# recommended by Gentoo
