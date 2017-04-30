@@ -9,6 +9,7 @@ inherit eutils
 DESCRIPTION="FLIF is the Free Lossless Image Format"
 HOMEPAGE="http://flif.info"
 SRC_URI="https://github.com/FLIF-hub/FLIF/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/FLIF-${PV}"
 
 LICENSE="LGPL-3 Apache-2"
 SLOT="0"
