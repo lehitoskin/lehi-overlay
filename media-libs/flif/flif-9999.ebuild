@@ -12,10 +12,11 @@ EGIT_REPO_URI="git://github.com/FLIF-hub/FLIF.git
 				https://github.com/FLIF-hub/FLIF"
 LICENSE="LGPL-3 Apache-2"
 SLOT="0"
-IUSE="-viewflif +decoder"
+IUSE="-viewflif +decoder +pixbuf"
 
 DEPEND="media-libs/libpng
 		viewflif? ( media-libs/libsdl2 )
+		pixbuf? ( x11-libs/gdk-pixbuf )
 		sys-libs/zlib"
 RDEPEND="${DEPEND}"
 
@@ -33,6 +34,9 @@ src_compile() {
 	if use viewflif; then
 		emake viewflif
 	fi
+	if use pixbuf; then
+		emake pixbufloader
+	fi
 }
 
 src_install() {
@@ -45,5 +49,18 @@ src_install() {
 	fi
 	if use viewflif; then
 		emake PREFIX="${D}/usr" install-viewflif
+	fi
+	if use pixbuf; then
+		# pixbufloader uses absolute paths, so ignore the Makefile entry and
+		# do it manually
+		einstall -c -d /usr/lib/gdk-pixbuf-2.0/2.10.0/loaders
+		einstall -c -m 755 -s libpixbufloader-flif.so /usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/
+	fi
+}
+
+pkg_postinst() {
+	if use pixbuf; then
+		# update pixbuf cache
+		gdk-pixbuf-query-loaders --update-cache
 	fi
 }
