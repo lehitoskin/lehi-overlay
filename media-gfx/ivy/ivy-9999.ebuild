@@ -4,7 +4,7 @@
 
 EAPI=5
 
-inherit eutils git-2
+inherit eutils git-2 gnome2-utils
 
 DESCRIPTION="Ivy is a taggable image viewer"
 HOMEPAGE="https://github.com/lehitoskin/ivy"
@@ -42,4 +42,12 @@ src_install() {
 		sed -e "s|${D}||g" \
 			-i "${D}/${f}" || die "Failed to patch '${f}'"
 	done
+}
+
+pkg_postinst() {
+	gnome2_icon_cache_update
+}
+
+pkg_postrm() {
+	gnome2_icon_cache_update
 }
