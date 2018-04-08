@@ -10,7 +10,7 @@ DESCRIPTION="FLIF is the Free Lossless Image Format"
 HOMEPAGE="http://flif.info"
 EGIT_REPO_URI="git://github.com/FLIF-hub/FLIF.git
 				https://github.com/FLIF-hub/FLIF"
-LICENSE="LGPL-3 Apache-2"
+LICENSE="GPL-3+ LGPL-3+ Apache-2.0"
 SLOT="0"
 IUSE="-viewflif +decoder +pixbuf"
 

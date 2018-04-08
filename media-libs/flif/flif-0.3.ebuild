@@ -11,7 +11,7 @@ HOMEPAGE="http://flif.info"
 SRC_URI="https://github.com/FLIF-hub/FLIF/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/FLIF-${PV}"
 
-LICENSE="LGPL-3 Apache-2"
+LICENSE="GPL-3+ LGPL-3+ Apache-2.0"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE="-viewflif +decoder"
