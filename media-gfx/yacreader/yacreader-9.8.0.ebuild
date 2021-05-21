@@ -29,7 +29,9 @@ RDEPEND="${DEPEND}
 
 src_prepare() {
 	eapply_user
+}
 
+src_configure() {
 	use p7zip || curl -O https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 && \
 		tar -xf p7zip_16.02_src_all.tar.bz2 && \
 		mv p7zip_16.02 compressed_archive/libp7zip
