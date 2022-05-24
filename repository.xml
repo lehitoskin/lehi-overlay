@@ -9,7 +9,7 @@
 		<email>lehi@tosk.in</email>
 		<name>lehitoskin</name>
     </owner>
-    <source type="git">git://github.com/lehitoskin/lehi-overlay.git</source>
+    <source type="git">https://github.com/lehitoskin/lehi-overlay.git</source>
     <feed>https://github.com/lehitoskin/lehi-overlay/commits/master.atom</feed>
   </repo>
 </repositories>
