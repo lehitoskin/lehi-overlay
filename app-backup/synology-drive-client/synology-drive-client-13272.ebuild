@@ -4,15 +4,16 @@
 EAPI=7
 inherit xdg
 
-SVER="3.1.0"
+SVER="3.2.1"
 
 # https://global.download.synology.com/download/Utility/SynologyDriveClient/${SVER}-${PV}/Ubuntu/Installer/x86_64/synology-drive-client-${PV}.x86_64.deb
 DESCRIPTION="Back up your files from multiple client computers to a centralized Synology NAS"
 HOMEPAGE="https://www.synology.com/en-global/releaseNote/SynologyDriveClient"
-SRC_URI="
-	amd64? ( https://global.download.synology.com/download/Utility/SynologyDriveClient/${SVER}-${PV}/Ubuntu/Installer/x86_64/synology-drive-client-${PV}.x86_64.deb )
-	x86? ( https://global.download.synology.com/download/Utility/SynologyDriveClient/${SVER}-${PV}/Ubuntu/Installer/i686/synology-drive-client-${PV}.i686.deb )
-"
+#SRC_URI="
+#	amd64? ( https://global.download.synology.com/download/Utility/SynologyDriveClient/${SVER}-${PV}/Ubuntu/Installer/x86_64/synology-drive-client-${PV}.x86_64.deb )
+#	x86? ( https://global.download.synology.com/download/Utility/SynologyDriveClient/${SVER}-${PV}/Ubuntu/Installer/i686/synology-drive-client-${PV}.i686.deb )
+#"
+SRC_URI="https://global.download.synology.com/download/Utility/SynologyDriveClient/${SVER}-${PV}/Ubuntu/Installer/x86_64/synology-drive-client-${PV}.x86_64.deb"
 
 LICENSE="Synology"
 SLOT="0"
